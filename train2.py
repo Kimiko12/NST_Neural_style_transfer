@@ -253,11 +253,8 @@ def train_loop_for_video(config):
                     print(f'Total loss per batch: {total_loss.item()}')
                     return total_loss
                 optimizer.step(closure)
-                    
-                    
-            if (epoch + 1) % 1 == 0:
-                print(f"Step {step + 1}/{len(dataloader)}, Loss: {closure().item()}")
-                
+        
+            print(f"Step {step + 1}/{len(dataloader)}, Loss: {closure().item()}")                
                 
             torch.cuda.empty_cache()
 
