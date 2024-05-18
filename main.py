@@ -2,7 +2,6 @@ from __future__ import division
 import argparse
 import torch
 from train2 import train_loop, train_loop_for_video
-from train1 import main
 from torchvision import transforms
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')

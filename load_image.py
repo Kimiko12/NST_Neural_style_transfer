@@ -20,9 +20,9 @@ def load_image(image_path, transform=None, max_size=None, shape=None):
     if max_size:
         scale = max_size / max(image.size)
         size = np.array(image.size) * scale
-        image = image.resize(size.astype(int), Image.ANTIALIAS)
+        image = image.resize(size.astype(int), Image.Resampling.LANCZOS)
     if shape:
-        image = image.resize(shape, Image.LANCZOS)
+        image = image.resize(shape, Image.Resampling.LANCZOS)
     if transform:
         image = transform(image).unsqueeze(0)
 
